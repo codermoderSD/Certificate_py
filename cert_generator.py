@@ -19,8 +19,7 @@ def createCertificate(name):
     print('printing certificate of: '+name)
     
 def sendMail(name,email):
-    fromaddr = "sdisilva13@gmail.com"
-    #"*Add your email*"
+    fromaddr = "*Add your email*"
     toaddr = email
     msg = MIMEMultipart()  
     msg['From'] = fromaddr 
@@ -44,8 +43,7 @@ def sendMail(name,email):
     msg.attach(p)
     s = smtplib.SMTP('smtp.gmail.com', 587) 
     s.starttls() 
-    s.login(fromaddr, "saviosavio") 
-# *Your Email password*
+    s.login(fromaddr, "*Your Email password*") 
     text = msg.as_string() 
     s.sendmail(fromaddr, toaddr, text) 
     s.quit() 
